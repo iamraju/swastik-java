@@ -5,26 +5,27 @@ public class TestString{
 		sp(greeting);
 
 		int len = greeting.length();
-      	sp( "String Length is : " + len );
 
-      	sp( greeting.concat("World !") );
+  	sp( "String Length is : " + len );
 
-      	System.out.printf("This is for float 	:  %f \n" +
-  				"This is for integer			: %d \n" +
-              	"And this for string 			: %s \n", 
-                  3030.00, 22, "Test string");
+  	sp( greeting.concat("World !") );
 
-      	sp("\n----------------------------------------------\n");
+  	System.out.printf("This is for float 	:  %f \n" +
+			"This is for integer			: %d \n" +
+          	"And this for string 			: %s \n", 
+              3030.00, 22, "Test string");
 
-      	// or
-      	String formattedString;
-      	formattedString = String.format("Name : %s\nAge : %d\nSalary : %f\n", "Ram", 22, 1200.33);
-      	sp(formattedString);
+  	sp("\n----------------------------------------------\n");
 
-      	// search string
-      	String searchingString = "Some paragraph goes here very long.";
-      	sp(searchingString.indexOf(new String("new")));
+  	// or
+  	String formattedString;
+  	formattedString = String.format("Name : %s %s\nAge : %d"+
+      "\nSalary : %f\n", "Ram", "Sharma", 22, 1200.33);
+  	sp(formattedString);
 
+  	// search string
+  	//String searchingString = "Some paragraph goes here very long.";
+  	//sp(searchingString.indexOf(new String("new")));
 
 	}
 
