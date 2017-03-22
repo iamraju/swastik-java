@@ -2,7 +2,7 @@ import javax.swing.*;
 
 class SwingWeb {
   SwingWeb(){
-    JFrame jfk = new JFrame(" A home for window");
+    JFrame jfk = new JFrame("A home for window");
     jfk.setSize(800,600);
 
     jfk.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
