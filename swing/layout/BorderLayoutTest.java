@@ -1,45 +1,56 @@
 import java.awt.*;  
-import javax.swing.*;  
+import javax.swing.*;
   
 public class BorderLayoutTest {  
-    JFrame f;
+    JFrame frame;
     BorderLayoutTest(){  
         getGUI();   
     }
     private void getGUI(){
-        f = new JFrame();
+        frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // This is for header
+        JPanel headerPanel = new JPanel();
+        ImageIcon icon = new ImageIcon("icon.gif");
+        JLabel logoLabel = new JLabel("Company", icon, JLabel.RIGHT);
+        headerPanel.add(logoLabel);
+        headerPanel.add(new JButton("Top Button"));
+        frame.add(headerPanel, BorderLayout.NORTH);
 
-        JButton b1 = new JButton("NORTH");
-        JButton b2 = new JButton("SOUTH"); 
-        JButton b3 = new JButton("EAST");
-        JButton b4 = new JButton("WEST");
-        
-        JButton b5 = new JButton("CENTER");
-        b5.setBounds(5, 5, 50, 50);
+        // Menu bar
+        JPanel menuPanel = new JPanel();
+        menuPanel.setLayout(new GridLayout(0, 1));
+        JButton aboutUs = new JButton("About Us");
+        aboutUs.setSize(50, 10);
 
-        JButton b6 = new JButton("CENTER1");
-        b6.setBounds(60, 60, 50, 50);
+        menuPanel.add(aboutUs);
+        menuPanel.add(new JButton("Services"));
+        menuPanel.add(new JButton("Features"));
+        menuPanel.add(new JButton("Contact Us"));
+        menuPanel.add(new JButton("Find Us"));
+        frame.add(menuPanel, BorderLayout.WEST);
 
-        f.add(b1, BorderLayout.NORTH);
-        f.add(b2, BorderLayout.SOUTH);  
-        f.add(b3, BorderLayout.EAST);  
-        f.add(b4, BorderLayout.WEST);  
+        // center
+        JPanel centerPanel = new JPanel();
+        JLabel centerLabel = new JLabel("Center Message");
+        centerPanel.add(centerLabel);
+        frame.add(centerLabel, BorderLayout.CENTER);
 
-        JPanel panel = new JPanel();
-        panel.add(b5);
-        panel.add(b6);
-        f.add(panel, BorderLayout.CENTER);
+        // This is for right sidebar
+        JPanel rightPanel = new JPanel();
+        JLabel rightSideBar = new JLabel("Right sidebar");
+        rightPanel.add(rightSideBar);
+        frame.add(rightPanel, BorderLayout.EAST);
 
+        // Footer
         JPanel southPanel = new JPanel();
-        JTextField jtf = new JTextField("This is text");
+        JTextField jtf = new JTextField(20);
         southPanel.add(jtf);
+        frame.add(southPanel, BorderLayout.SOUTH);
 
-        f.add(southPanel, BorderLayout.SOUTH);
-
-        f.setSize(300, 300);
-        f.setVisible(true);
+        frame.setSize(300, 300);
+        frame.setVisible(true);
     }
     public static void main(String[] args) {  
         new BorderLayoutTest();
