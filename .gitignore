@@ -1,3 +1,7 @@
 *.class
 /com
 
+/Swastik7Swing/nbproject/private/
+/Swastik7Swing/build/
+/Sem7/nbproject/private/
+/Sem7/build/
